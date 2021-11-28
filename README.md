@@ -112,7 +112,7 @@ The pre-processing pipeline consists of the following steps:
       
     - just image enchancment: best run : 0.53
       
-    - sum fusion:
+    - sum fusion: 0.45
       
 
 ## Analysis of Results
