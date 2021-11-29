@@ -4,7 +4,7 @@
 
 ## The Dataset
 
-# Previous efforts referenced
+## Previous efforts referenced
 
 - [*A Benchmark of Ocular Disease Intelligent Recognition: One Shot for Multi-Disease Detection [1]* ](https://doi.org/10.1007/978-3-030-71058-3_11): This is the original paper associated with the ODIR-5k dataset, written by the authors of the dataset.
   
