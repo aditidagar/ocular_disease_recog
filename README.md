@@ -137,7 +137,7 @@ From the results, the model's accuracy drops dramatically when determining betwe
 
 2. In [MODEL](https://github.com/aditidagar/ocular_disease_recog/tree/Adding-VGG16-model-Jupiter-files/MODEL "MODEL") folder you will see multiple models allowing for you to run different CNN architectures. The files are split into two main groups, four classes prediction models and all classes prediction models. (Note some models have an examples of how to run the models with our augmented data)
 
-3. Select one of the models you want to run. Currently there are 4 types of architecture availible VGG16, VGG19, InceptionV3, InceptionResNetV2.
+3. Select one of the models you want to run. Currently there are 4 types of architecture available VGG16, VGG19, InceptionV3, InceptionResNetV2.
 
 4. When opening one of the pre-processing/augmentation/model.ipynb files there should be a link to run it in Google Colab or you can download the file and run localy.
 
