@@ -149,5 +149,5 @@ From the results, the model's accuracy drops dramatically when determining betwe
 - [3] JordiCorbilla. “Jordicorbilla/Ocular-Disease-Intelligent-Recognition-Deep-Learning: Odir-2019. Ocular Disease Intelligent Recognition through Deep Learning Architectures.” GitHub. Accessed October 3rd, 2021.
   [https://github.com/JordiCorbilla/ocular-disease-intelligent-recognition-deep-learning.](https://github.com/JordiCorbilla/ocular-disease-intelligent-recognition-deep-learning)
 - [4] Alex Alemi, "Improving Inception and Image Classification in TensorFlow". https://ai.googleblog.com/2016/08/improving-inception-and-image.html
-- [5] Larxel “Ocular Disease Recognition” Kaggle. Accessed November 20th 2021
+- [5] Larxel “Ocular Disease Recognition” Kaggle. Accessed September 28th 2021
   [https://www.kaggle.com/andrewmvd/ocular-disease-recognition-odir5k/](https://www.kaggle.com/andrewmvd/ocular-disease-recognition-odir5k/)
