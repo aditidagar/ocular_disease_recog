@@ -70,7 +70,12 @@ The pre-processing pipeline consists of the following steps:
   After the data has been pre-processed, it is augmented to create new data from existing data. The augmentation techniques used are: horizontal and vertical flipping, random brightness increase and rotation (unless image concatenation is used as the image fusion method). Rotation is not applied to images which have been fused through concatenation, as they have a rectangular aspect ratio and rotating them would ruin the horizontal allignment of both fundus', creating an image that is not uniform with the rest of the data.
 
 ### Models
+Note for each of the models we used pre-trained weights for the model layers due to the fact that it takes too long to train the model from all random weights, and it allows us to focus on improving our solutions. 
 
+- ##### VGG16:
+  
+  We followed the standart implementation of the VGG16 modle using tenserflo keras. We also set all of the layers as trainable so that i learns more about the eye diseases. Only flatten layer and one Dense layers for outputs were added to the default model.
+  
 - ##### InceptionV3:
   
   We followed the standard implementation of the InceptionV3 model using tenserflow keras InceptionV3 with all of the layers set as trainable with the additional layer of GlobalAveragePooling2D, and two dense layers[4].
