@@ -114,7 +114,17 @@ The pre-processing pipeline consists of the following steps:
 | Image enhancement and concatenation image fusion | 0.93                | 0.50                  |
 | Image enhancement and sum image fusion           | 0.90                | 0.45                  |
 
+**Note:** extra decimal points were not recorded when testing with InceptionResNetV2.
+
 ## Analysis of Results
+
+For the 4 disease case, InceptionResNetV2 performs best with image enhancement and no image fusion, with an accuracy of 0.94.
+
+
+
+For the "all diseases" case, InceptionV3 performs best without any image enhancement or image fusion, with an accuracy of 0.5681.
+
+
 
 From the results, the model's accuracy drops dramatically when determining between 4 and all cases. There are a few possible reasons as to why this happens. First, our model is fed data from both eyes simultaneously, so it might not learn enough about the characteristics of the disease for each eye, thus resulting in inaccurate predictions. This could be solved by creating two separate networks that respectfully target left and right eyes [1]. Another reason could be that quite a few diseases look visually the same or have the same noise, thus resulting in wrong predictions and the models learning incorrect information. Another reason could be that there are many cases in the dataset where the images themselves are either zoomed in or shifted a bit, thus creating other errors for the model during learning. Another possible solution could be to modify the CNN architecture's layers (or adding extra layers) to better detect ocular deceases. For example, we could use different pooling for our VGG16 model, add drop out layers or add dense layers at the end of the model.
 
@@ -130,7 +140,7 @@ From the results, the model's accuracy drops dramatically when determining betwe
    
    - **Note 1:** Running the first cell in the pre-processing script often fails (potentially due to a bug in the latency of Google Colab's filesystem). It is sufficient to simply run it a second time in order for it to succeed.
    
-   - **Note 2:**  There is a `fusionMethod` variable in the pre-processing  and augmentation script that allows you to select which image fusion method is desired (or none). This variable also exists in the models and must be set consistenly for the models to run correctly. 
+   - **Note 2:**  There is a `fusionMethod` variable in the pre-processing  and augmentation script that allows you to select which image fusion method is desired (or none). This variable also exists in the models and must be set consistenly across all scripts for the models to run correctly. 
 
 2. In [MODEL](https://github.com/aditidagar/ocular_disease_recog/tree/Adding-VGG16-model-Jupiter-files/MODEL "MODEL") folder you will see multiple models allowing for you to run different CNN architectures. The files are split into two main groups, four classes prediction models and all classes prediction models. (Note some models have an examples of how to run the models with our augmented data)
    
