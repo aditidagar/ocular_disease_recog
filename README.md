@@ -34,7 +34,6 @@
 
 Before feeding the ODIR-5k dataset to the ML model, we run the data through a pre-processing and augmentation pipeline. First, we pre-process the training data from the dataset through image enhancement. This is followed by the creating a validation set by randomly sampling 30% of the training data. Afterwards, the training data is augmented to even the distribution of images per-disease. Finally, the data is given as an input to one of the 4 models implemented. 
 
-
 ### Pre-processing
 
 The pre-processing pipeline consists of the following steps:
@@ -56,7 +55,7 @@ The pre-processing pipeline consists of the following steps:
    CLAHE and HSV are always applied to each image, though their parameters randomly vary within a defined range of values.  
    Below is an example of a non-enhanced image (left) and the same image after enhancement (right) [5].
    
-   ![before_after_image_enhancement.png](/home/andrew/git/ocular_disease_recog/Images/before_after_image_enhancement.png)
+   ![before_after_image_enhancement.png](./Images/before_after_image_enhancement.png)
    
    #### Image fusion
    
@@ -81,8 +80,6 @@ The pre-processing pipeline consists of the following steps:
   For InceptionResNetV2 we also followed the standard model implementation using the Tenserflow Keras implementaiton with all of the layers marked as trainable with the additional layer of GlobalAveragePooling2D, Dropout and Dense layers[4].
 
 ## Results
-
-
 
 ### Results with InceptionV3
 
@@ -120,8 +117,6 @@ The pre-processing pipeline consists of the following steps:
 | Image enhancement and concatenation image fusion | 0.93                | 0.50                  |
 | Image enhancement and sum image fusion           | 0.90                | 0.45                  |
 
-
-
 ## Analysis of Results
 
 From the results, the model's accuracy drops dramatically when determining between 4 and all cases. There are a few possible reasons as to why this happens. First, our model is fed data from both eyes simultaneously, so it might not learn enough about the characteristics of the disease for each eye, thus resulting in inaccurate predictions. This could be solved by creating two separate networks that respectfully target left and right eyes [1]. Another reason could be that quite a few diseases look visually the same or have the same noise, thus resulting in wrong predictions and the models learning incorrect information. Another reason could be that there are many cases in the dataset where the images themselves are either zoomed in or shifted a bit, thus creating other errors for the model during learning. Another possible solution could be to modify the CNN architecture's layers (or adding extra layers) to better detect ocular deceases. For example, we could use different pooling for our VGG16 model, add drop out layers or add dense layers at the end of the model.
@@ -131,8 +126,6 @@ From the results, the model's accuracy drops dramatically when determining betwe
 - For 4 diseases, image enhancement improved the accuracy of the model. However, in the "all diseases" case, the accuracy drops slightly. This hints that the detection of certain disease groups (Diabetic retinopathy, Glaucoma, Hypertension and Other) do not benefit from CLAHE and HSV filters. Further research is required to determine which diseases suffer in detection accuracy when image enhancement is applied. A potential future improvement would consist of applying different image enhancements for different diseases in order to prevent a loss of accuracy when using enhanced images for the "all diseases" case. 
 
 - The InceptionV3 performed best in the 4 disease case when image enhancement and image concatenation was used. This hints that fusing fundus images through concatenation may be a viable method for future models to use, particularly in the detection of 4 diseases (Normal, Cataracts, Myopia and Age-related macular degeneration).  
-
-
 
 ## How to run our model
 
@@ -147,10 +140,6 @@ From the results, the model's accuracy drops dramatically when determining betwe
 3. Select one of the models you want to run. Currently there are 4 types of architecture availible VGG16, VGG19, InceptionV3, InceptionResNetV2.
 
 4. When opening one of the pre-processing/augmentation/model.ipynb files there should be a link to run it in Google Colab or you can download the file and run localy.
-
-
-
-
 
 ## References
 
