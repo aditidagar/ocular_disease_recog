@@ -7,6 +7,8 @@ Ocular diseases are the leading cause of blindness worldwide. A large population
 
 ## The Dataset
 
+We used the Ocular Disease Intelligent Recognition (ODIR-5K) dataset [5]. It contains structured data of 5,000 patients with age, colour fundus photographs of left and right eyes and diagnostic keywords from ophthalmologists. The fundus photographs were captured using various cameras like Canon, Zeiss and Kowa. Majority of the fundus images have 5K resolution. For our model we use subsets of the dataset and in some cases even the complete dataset for training.
+
 ## Previous efforts referenced
 
 - [*A Benchmark of Ocular Disease Intelligent Recognition: One Shot for Multi-Disease Detection [1]* ](https://doi.org/10.1007/978-3-030-71058-3_11): This is the original paper associated with the ODIR-5k dataset, written by the authors of the dataset.
@@ -78,6 +80,10 @@ Note for each of the models we used pre-trained weights for the model layers due
 - ##### VGG16:
   
   We followed the standart implementation of the VGG16 modle using tenserflo keras. We also set all of the layers as trainable so that i learns more about the eye diseases. Only flatten layer and one Dense layers for outputs were added to the default model.
+  
+- ##### VGG19:
+  
+  We used the freely available model weights that the Visual Geometry Group used for the ImageNet competition. We ran three iterations of the model where the iteration detects Myopia, the second detects cataracts and the final one detects retinopathy.
   
 - ##### InceptionV3:
   
