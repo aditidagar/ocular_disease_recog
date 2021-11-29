@@ -97,7 +97,7 @@ Note for each of the models we used pre-trained weights for the model layers due
 
 ### Results with VGG19
 
-| Cataracts detection accuracy | Diabetic retinopath detection accuracy | Myopia detection accuracy |
+| Cataracts detection accuracy | Diabetic retinopathy detection accuracy | Myopia detection accuracy |
 | ---------------------------- | -------------------------------------- | ------------------------- |
 | 0.9541                       | 0.8574                                 | 0.9791                    |
 
