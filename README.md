@@ -2,6 +2,9 @@
 
 ## Introduction: the problem
 
+Ocular diseases are the leading cause of blindness worldwide. A large population suffers from ocular diseases like cataracts, myopia, hypertension and retinopathy. When it comes to treatment, early detection is the key as it can prevent visual impairment. Unfortunately, manual detection is usually very time consuming and there are not enough ophthalmologists for timely detection. Therefore, there has been a growing interest in developing automated detection using machine learning models as it can help revolutionise the early detection of these diseases [1]. Our team is working towards developing such a model using Convolutional Neural Networks and novel preprocessing techniques. We propose a constitutional neural network model that detects 8 different classification groups for 7 different ocular diseases: Normal (healthy), Diabetic, Glaucoma, Cataracts, Age-related macular degeneration, Hypertension, Myopia and other.
+
+
 ## The Dataset
 
 ## Previous efforts referenced
