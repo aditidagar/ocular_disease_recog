@@ -92,12 +92,9 @@ The pre-processing pipeline consists of the following steps:
 
 ### Results with VGG19
 
-| Pre-processing methods used                      | 4 diseases accuracy | All diseases accuracy |
-| ------------------------------------------------ | ------------------- | --------------------- |
-| No image enhancement, no image fusion            |                     |                       |
-| Image enhancement, no image fusion               |                     |                       |
-| Image enhancement and concatenation image fusion |                     |                       |
-| Image enhancement and sum image fusion           |                     |                       |
+| Cataracts detection accuracy | Diabetic retinopath detection accuracy | Myopia detection accuracy |
+| ---------------------------- | -------------------------------------- | ------------------------- |
+| 0.9541                       | 0.8574                                 | 0.9791                    |
 
 ### Results with VGG16
 
@@ -131,11 +128,13 @@ From the results, the model's accuracy drops dramatically when determining betwe
 
 1. First you need to run the preprocessing scripts provided in the [PREPROCESSING](https://github.com/aditidagar/ocular_disease_recog/tree/Adding-VGG16-model-Jupiter-files/PREPROCESSING "PREPROCESSING") folder. The pre-processing script must be ran first, and then the augmentation script should be ran afterwards. These scripts save everything to your Google Drive, please modify the directory where you want the files to be saved at.
    
-   - Note 1: Running the first cell in the pre-processing script often fails (potentially due to a bug in the latency of Google Colab's filesystem). It is sufficient to simply run it a second time in order for it to succeed.
+   - **Note 1:** Running the first cell in the pre-processing script often fails (potentially due to a bug in the latency of Google Colab's filesystem). It is sufficient to simply run it a second time in order for it to succeed.
    
-   - Note 2:  There is a `fusionMethod` variable in the pre-processing  and augmentation script that allows you to select which image fusion method is desired (or none). This variable also exists in the models and must be set consistenly for the models to run correctly. 
+   - **Note 2:**  There is a `fusionMethod` variable in the pre-processing  and augmentation script that allows you to select which image fusion method is desired (or none). This variable also exists in the models and must be set consistenly for the models to run correctly. 
 
 2. In [MODEL](https://github.com/aditidagar/ocular_disease_recog/tree/Adding-VGG16-model-Jupiter-files/MODEL "MODEL") folder you will see multiple models allowing for you to run different CNN architectures. The files are split into two main groups, four classes prediction models and all classes prediction models. (Note some models have an examples of how to run the models with our augmented data)
+   
+   - **Additional note:** The VGG19 model currently bypasses our pre-processing and augmentation pipeline, and can be run in it's entirety (downloading the data and training ) through it's own script. The VGG19 model has a seperate script for Myopia, Cataracts and Diabetic Retinopathy
 
 3. Select one of the models you want to run. Currently there are 4 types of architecture available VGG16, VGG19, InceptionV3, InceptionResNetV2.
 
